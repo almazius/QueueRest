@@ -1,31 +1,32 @@
-# QueueRest
-# Тестовое задание в Keenetic (NDMSystem) на junior+/Midle- программиста.
+# QueueRest<b><p><br>Тестовое задание в Keenetic (NDMSystem) на junior+/Midle- программиста.</p></b>
 
 Реализовать брокер очередей в виде веб сервиса. Сервис должен обрабатывать 2 метода:
 
-1. PUT /queue?v=message
+<b>1. PUT /queue?v=message</b>
+
     Положить сообщение message в очередь с именем queue (имя очереди может
     быть любое), пример:
 
-curl -XPUT http://127.0.0.1/pet?v=cat
-curl -XPUT http://127.0.0.1/pet?v=dog
-curl -XPUT http://127.0.0.1/role?v=manager
-curl -XPUT http://127.0.0.1/role?v=executive
+<b><br>curl -XPUT http://127.0.0.1/pet?v=cat</b>
+<b><br>curl -XPUT http://127.0.0.1/pet?v=dog</b>
+<b><br>curl -XPUT http://127.0.0.1/role?v=manager</b>
+<b><br>curl -XPUT http://127.0.0.1/role?v=executive</b>
+
 
 в ответ {пустое тело + статус 200 (ok)}
 в случае отсутствия параметра v - пустое тело + статус 400 (bad request)
 
-2. GET /queue
+<b>2. GET /queue</b>
 
 Забрать (по принципу FIFO) из очереди с названием queue сообщение и вернуть в теле http запроса, пример (результат, который должен быть при выполненных put’ах выше):
 
-curl http://127.0.0.1/pet => cat
-curl http://127.0.0.1/pet => dog
-curl http://127.0.0.1/pet => {пустое тело + статус 404 (not found)}
-curl http://127.0.0.1/pet => {пустое тело + статус 404 (not found)}
-curl http://127.0.0.1/role => manager
-curl http://127.0.0.1/role => executive
-curl http://127.0.0.1/role => {пустое тело + статус 404 (not found)}
+<b><br>curl http://127.0.0.1/pet => cat</b>
+<b><br>curl http://127.0.0.1/pet => dog</b>
+<b><br>curl http://127.0.0.1/pet => {пустое тело + статус 404 (not found)}</b>
+<b><br>curl http://127.0.0.1/pet => {пустое тело + статус 404 (not found)}</b>
+<b><br>curl http://127.0.0.1/role => manager</b>
+<b><br>curl http://127.0.0.1/role => executive</b>
+<b><br>curl http://127.0.0.1/role => {пустое тело + статус 404 (not found)}</b>
 
 при GET-запросах сделать возможность задавать аргумент timeout
 
